@@ -13,7 +13,7 @@ toc: true
 - name: Colin Blog
   owner: Colin
   url: https://blog.colinchou.top/
-  desc: Code & LIfe
+  desc: Code & Life
   image: https://blog.colinchou.top/avatar/avatar.jpg
 ```
 
