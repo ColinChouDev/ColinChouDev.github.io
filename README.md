@@ -39,6 +39,6 @@ hugo --gc --minify
 - 站点信息：`hugo.toml`
 - 主题设置：`config/_default/params.yml`
 - 默认封面：`static/images/banner-colin.jpg`
-- 头像：`static/avatar/avatar-colin.jpg`
+- 头像：`static/avatar/avatar.jpg`
 - 个性化样式：`static/css/colin-blog.css`
 - 关于页面：`content/about.md`
