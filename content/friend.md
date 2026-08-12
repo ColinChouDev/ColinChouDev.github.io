@@ -12,9 +12,9 @@ toc: true
 ```yml
 - name: Colin Blog
   owner: Colin
-  url: 待部署后填写
+  url: https://blog.colinchou.top/
   desc: Code · Systems · Notes
-  image: /avatar/avatar.jpg
+  image: https://blog.colinchou.top/avatar/avatar.jpg
 ```
 
 ## 申请方法
@@ -23,6 +23,7 @@ toc: true
 
 ```yml
 - name: 显示名称
+  owner: 站长名称
   url: 网站地址
   desc: 简短描述
   image: 头像地址
