@@ -14,7 +14,7 @@ toc: true
   owner: Colin
   url: 待部署后填写
   desc: Code · Systems · Notes
-  image: /avatar/avatar-colin.jpg
+  image: /avatar/avatar.jpg
 ```
 
 ## 申请方法
