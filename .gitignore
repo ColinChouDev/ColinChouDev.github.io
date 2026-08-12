@@ -1,0 +1,10 @@
+.hugo_build.lock
+.DS_Store
+.idea/
+.cache/
+.env
+.env.*
+!.env.example
+
+/public
+/resources
