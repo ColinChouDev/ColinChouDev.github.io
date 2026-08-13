@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客 on Colin Blog</title><link>https://blog.colinchou.top/tags/%E5%8D%9A%E5%AE%A2/</link><description>Recent content from Colin Blog</description><generator>Hugo</generator><language>zh-CN</language><copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright><lastBuildDate>Wed, 12 Aug 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.colinchou.top/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>博客开始运行</title><link>https://blog.colinchou.top/post/hello-world/</link><pubDate>Wed, 12 Aug 2026 00:00:00 +0800</pubDate><guid>https://blog.colinchou.top/post/hello-world/</guid><description>
+<![CDATA[<h1>博客开始运行</h1><p>作者：Colin（<no value>）</p>
+        
+          <p>博客的第一版已经搭建完成。</p>
+<p>它使用 Hugo 生成静态页面，文章以 Markdown 文件保存在 <code>content/post</code> 目录中。之后可以通过下面的命令创建新文章：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo new content post/my-new-post.md
+</span></span></code></pre></div><p>新文章默认是草稿。完成后，将文章头部的 <code>draft</code> 改为 <code>false</code>，再执行构建即可发布。</p>
+        
+        <hr><p>本文2026-08-12首发于<a href='https://blog.colinchou.top/'>Colin Blog</a>，最后修改于2026-08-12</p>]]></description><category>随笔</category></item></channel></rss>
