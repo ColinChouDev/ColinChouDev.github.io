@@ -26,13 +26,25 @@ hugo new content post/my-new-post.md
 
 文章保存在 `content/post`。发布前将 Front Matter 中的 `draft` 设置为 `false`。
 
+## 发布
+
+确认文章内容后，提交并推送到 `main`：
+
+```sh
+git add content/post/my-new-post.md
+git commit -m "publish my-new-post"
+git push origin main
+```
+
+如果文章使用了新图片，也要将图片文件加入同一次提交。推送后，GitHub Actions 会自动构建并发布网站；可在仓库的 Actions 页面查看部署结果。
+
 ## 构建
 
 ```sh
 hugo --gc --minify
 ```
 
-静态文件输出到 `public` 目录。
+静态文件输出到 `public` 目录。本地构建仅用于检查，不会单独更新线上网站。
 
 ## 常用配置
 

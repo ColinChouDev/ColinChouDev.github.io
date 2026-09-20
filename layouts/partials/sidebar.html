@@ -97,6 +97,7 @@
     {{- end -}}
   {{- end -}}
   <div class="sidebar-widget">
+    {{- /* Show configured widgets only on the home page. */ -}}
     {{- if and .IsHome .Site.Params.widgets -}}
       {{- range .Site.Params.widgets -}}
         {{- partialCached (printf "widget/%s.html" .) $ -}}
