@@ -23,7 +23,7 @@ mermaid: false
 hugo new content post/my-new-post.md
 ```
 
-新文章默认是草稿。完成后，将文章头部的 `draft` 改为 `false`，再执行构建即可发布。
+新文章默认是草稿。完成后，将文章头部的 `draft` 改为 `false`，提交并推送到 `main`；GitHub Actions 会自动构建并发布。
 
 ## 本地预览
 
