@@ -38,13 +38,13 @@ git push origin main
 
 如果文章使用了新图片，也要将图片文件加入同一次提交。推送后，GitHub Actions 会自动构建并发布网站；可在仓库的 Actions 页面查看部署结果。
 
-## 构建
+## 构建检查
 
 ```sh
-hugo --gc --minify
+hugo --gc --minify --panicOnWarning
 ```
 
-静态文件输出到 `public` 目录。本地构建仅用于检查，不会单独更新线上网站。
+静态文件输出到 `public` 目录。部署流程使用 Hugo 0.166.0 Extended 版；本地也建议使用相同版本检查。本地构建不会单独更新线上网站。
 
 ## 常用配置
 
@@ -54,3 +54,5 @@ hugo --gc --minify
 - 头像：`static/avatar/avatar.jpg`
 - 个性化样式：`static/css/colin-blog.css`
 - 关于页面：`content/about.md`
+
+主题的其他设置继承自 `themes/hugo-theme-reimu/config/_default/params.yml`，本站只在 `config/_default/params.yml` 中保留差异。更新主题时，先对照主题默认配置并检查生成页面。

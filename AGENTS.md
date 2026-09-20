@@ -69,13 +69,13 @@
 ## 3. 重要文件
 
 - `hugo.toml`：站点基础配置、正式域名、语言与输出格式。
-- `config/_default/params.yml`：Reimu 主题主要配置、菜单、作者、侧栏、评论和统计。
+- `config/_default/params.yml`：本站相对 Reimu 默认配置的差异，包括菜单、作者、侧栏、评论和配色；其他设置继承自主题。
 - `content/post/`：博客文章。
 - `content/about.md`：About 页面。
 - `content/friend.md`：友链页面。
 - `content/archives/_index.md`：归档页元数据。
-- `layouts/partials/footer.html`：页脚覆盖模板。
-- `layouts/partials/sidebar/commonBar.html`：侧栏覆盖模板。
+- `layouts/partials/sidebar.html`：仅在首页显示分类和标签组件。
+- `layouts/partials/sidebar/commonBar.html`：侧栏宣言使用 `sidebar_description`，与网页摘要 `description` 分开。
 - `i18n/zh-CN.yml`：中文文案与页面标题覆盖。
 - `static/css/colin-blog.css`：主要个性化样式。
 - `static/avatar/avatar.jpg`：当前头像。
@@ -106,10 +106,10 @@ hugo server --buildDrafts
 生产构建：
 
 ```sh
-HUGO_CACHEDIR=/tmp/colin-blog-hugo-cache hugo --gc --minify --cleanDestinationDir
+HUGO_CACHEDIR=/tmp/colin-blog-hugo-cache hugo --gc --minify --cleanDestinationDir --panicOnWarning
 ```
 
-在受限环境里不要直接依赖 Hugo 默认的 `~/Library/Caches`，否则可能遇到缓存目录权限错误。生产构建成功时，当前规模约为 20 个页面和 197 个静态文件；数量会随文章增加而变化。
+在受限环境里不要直接依赖 Hugo 默认的 `~/Library/Caches`，否则可能遇到缓存目录权限错误。生产构建成功时，当前规模约为 19 个页面和 197 个静态文件；数量会随文章增加而变化。
 
 每次涉及页面展示或交互的修改，至少验证：
 
@@ -133,12 +133,12 @@ hugo new content post/article-name.md
 编辑 `content/post/article-name.md`，发布前把 Front Matter 中的 `draft` 改为 `false`，然后：
 
 ```sh
-git add .
+git add content/post/article-name.md
 git commit -m "publish article-name"
 git push origin main
 ```
 
-推送 `main` 后，GitHub Actions 会使用 Hugo `0.164.0 extended` 构建，并强制更新 `gh-pages`。不要把生成的 `public/` 提交到 `main`。
+如有新图片，也要显式加入提交。推送 `main` 后，GitHub Actions 会使用 Hugo `0.166.0 extended` 构建，并更新 `gh-pages`。不要把生成的 `public/` 提交到 `main`。
 
 ## 6. Git 与部署约束
 
@@ -147,7 +147,7 @@ git push origin main
 - 工作区可能包含用户或其他代理的改动；开始修改前先运行 `git status --short`，不要覆盖无关更改。
 - 不要使用 `git reset --hard`、强制覆盖源码分支或手工编辑 `gh-pages`。
 - 不要提交密钥、令牌或本地环境文件。
-- 最近一次已验收的功能提交为 `1bd377a show sidebar widgets only on home page`；项目交接说明已通过 `f2520df add project agent guide` 纳入版本控制，后续提交出现时以仓库现状为准。
+- 以当前 `main` 分支和实际构建结果为准，不依赖本文记录的历史提交号判断功能是否存在。
 
 ## 7. 已完成的上线验收
 
